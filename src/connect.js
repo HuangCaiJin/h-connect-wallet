@@ -36,17 +36,6 @@ class Connect {
 
             // 获取提供者
             this.provider = await this.getProvider()
-            if(!this.chainId) {
-                this.chainId = parseInt(this.provider.chainId)
-            }
-
-            this.chainDetail = await this.getChainDetail(this.chainId)
-
-            // 切换至目标链
-            if(this.chainId != parseInt(this.provider.chainId)) {
-                await this.switchChain()
-            }
-            
             return true
         }catch(err){
             console.log(err)
@@ -55,9 +44,10 @@ class Connect {
         return false
     }
 
-    async switchChain() {
+    async switchChain(chainId) {
         try{
-            let data = [{ chainId: `0x${parseInt(this.chainId).toString(16)}` }];
+            chainId = chainId ? chainId : this.chainId
+            let data = [{ chainId: `0x${parseInt(chainId).toString(16)}` }];
             await this.provider.request({
               method: "wallet_switchEthereumChain",
               params: data
@@ -67,7 +57,7 @@ class Connect {
                 let { name,rpc,explorers,nativeCurrency } = this.chainDetail
                 let data = [
                   {
-                    chainId: `0x${parseInt(this.chainId).toString(16)}`,
+                    chainId: `0x${parseInt(chainId).toString(16)}`,
                     chainName: name,
                     rpcUrls: rpc,
                     blockExplorerUrls:explorers.length ? explorers.map(item=>{
@@ -87,6 +77,12 @@ class Connect {
     async enable() {
         try{
             let accounts = await this.provider.enable()
+            this.chainId = parseInt(this.provider.chainId)
+            this.chainDetail = await this.getChainDetail(this.chainId)
+            // 切换至目标链
+            if(this.chainId != parseInt(this.provider.chainId) && "walletconnect" != this.walletSource.toLocaleLowerCase()) {
+                await this.switchChain()
+            }
             return accounts
         }catch(err){
             console.error(REJECT_CONNECT)
@@ -195,12 +191,12 @@ class Connect {
     async getChainDetail() {
         try{
             let chain = await api.chainDetail(this.chainId)
-            return {
+            return chain ? {
                 ...chain,
                 rpcUrl:chain.rpc.length ? chain.rpc[0] : "",
                 explorer:chain.explorers.length ? chain.explorers[0] : {},
                 faucet:chain.faucets.length ? chain.faucets[0] : {}
-            }
+            } : null
         }catch(error){
             console.log(error)
             console.error(CHAIN_SUPPORT)

@@ -1,6 +1,6 @@
 {
   "name": "h-connect-wallet",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "连接区块链钱包",
   "main": "src/index.js",
   "files": [
@@ -8,13 +8,15 @@
   ],
   "scripts": {
     "build": "node ./build/index && webpack",
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack server --open"
   },
   "author": "CaiJin Huang",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.23.1",
-    "webpack-cli": "^3.1.2"
+    "@webpack-cli/serve": "^1.7.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.11.0"
   },
   "dependencies": {
     "@walletconnect/web3-provider": "^1.7.8",
