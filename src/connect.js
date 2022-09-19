@@ -33,7 +33,7 @@ class Connect {
             // 获取提供者
             this.provider = await this.getProvider()
             if(!this.chainId) {
-                this.chainId = this.provider.chainId
+                this.chainId = parseInt(this.provider.chainId)
             }
 
             this.chainDetail = await this.getChainDetail(this.chainId)
