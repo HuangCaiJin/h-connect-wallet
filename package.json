@@ -4,12 +4,11 @@
   "description": "连接区块链钱包",
   "main": "src/index.js",
   "files": [
-    "src",
-    "build"
+    "src"
   ],
   "scripts": {
-    "build": "webpack",
-    "dev": "node ./build/index && webpack-dev-server --open"
+    "build": "node ./build/index && webpack",
+    "dev": "webpack-dev-server --open"
   },
   "author": "CaiJin Huang",
   "license": "ISC",
