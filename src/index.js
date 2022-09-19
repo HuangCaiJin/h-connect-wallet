@@ -30,11 +30,11 @@ document.getElementById("enable").addEventListener("click",async () => {
         }
     }
     
-}) */
+})
 document.getElementById("switch").addEventListener("click",async () => {
     
     connect.switchChain(56)
-})
+}) */
 
 if(window) {
     window.Connect = Connect
