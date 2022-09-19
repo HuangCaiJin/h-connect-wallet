@@ -58,12 +58,14 @@ class Connect {
             });
         }catch(err) {
             if (err && err.code == 4902) {
-                let { name,rpc } = this.chainDetail
+                let { name,rpc,explorers,nativeCurrency } = this.chainDetail
                 let data = [
                   {
                     chainId: `0x${this.chainId.toString(16)}`,
                     chainName: name,
-                    rpcUrls: rpc
+                    rpcUrls: rpc,
+                    blockExplorerUrls:explorers,
+                    nativeCurrency:nativeCurrency
                   }
                 ];
                 await this.provider.request({
