@@ -38,12 +38,9 @@ class Connect {
             this.provider = await this.getProvider()
             
             if(this.chainId) {
+                console.log(this.chainId)
                 this.chainDetail = await this.getChainDetail(this.chainId)
-                // 切换至目标链
-                await this.switchChain()
-            }else{
-                this.chainId = parseInt(this.provider.chainId)
-                this.chainDetail = await this.getChainDetail(this.chainId)
+                
             }
 
             return true
@@ -77,7 +74,6 @@ class Connect {
                 nativeCurrency:nativeCurrency
               }
             ];
-            console.log(data)
             await this.provider.request({
               method: "wallet_addEthereumChain",
               params: data
@@ -85,13 +81,17 @@ class Connect {
         }
 
         // 更新提供者
-        this.provider = await this.getProvider()
+        this.provider.chainId = parseInt(chainId)
+        this.provider.rpcUrl = this.provider.rpc[this.provider.chainId]
     }
 
     async enable() {
         try{
             let accounts = await this.provider.enable()
-
+            // 切换至目标链
+            if(this.chainId != parseInt(this.provider.chainId)) {
+                await this.switchChain()
+            }
             return accounts
         }catch(err){
             console.error(REJECT_CONNECT)
