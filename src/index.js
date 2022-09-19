@@ -1,6 +1,6 @@
 let Connect = require("./connect")
 
-/* let connect = new Connect("WalletConnect")
+let connect = new Connect("WalletConnect")
 document.getElementById("enable").addEventListener("click",async () => {
     
     let init = await connect.init()
@@ -33,7 +33,7 @@ document.getElementById("enable").addEventListener("click",async () => {
 document.getElementById("switch").addEventListener("click",async () => {
     
     connect.switchChain(97)
-}) */
+})
 
 if(window) {
     window.Connect = Connect

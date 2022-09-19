@@ -45,6 +45,8 @@ class Connect {
     }
 
     async switchChain(chainId) {
+        chainId = chainId ? chainId : this.chainId
+        let chainDetail = await api.chainDetail(chainId)
         try{
             chainId = chainId ? chainId : this.chainId
             let data = [{ chainId: `0x${parseInt(chainId).toString(16)}` }];
@@ -53,24 +55,23 @@ class Connect {
               params: data
             });
         }catch(err) {
-            if (err && err.code == 4902) {
-                let { name,rpc,explorers,nativeCurrency } = this.chainDetail
-                let data = [
-                  {
-                    chainId: `0x${parseInt(chainId).toString(16)}`,
-                    chainName: name,
-                    rpcUrls: rpc,
-                    blockExplorerUrls:explorers.length ? explorers.map(item=>{
-                        return item.url
-                    }) : [],
-                    nativeCurrency:nativeCurrency
-                  }
-                ];
-                await this.provider.request({
-                  method: "wallet_addEthereumChain",
-                  params: data
-                });
-            }
+            let { name,rpc,explorers,nativeCurrency } = chainDetail
+            let data = [
+              {
+                chainId: `0x${parseInt(chainId).toString(16)}`,
+                chainName: name,
+                rpcUrls: rpc,
+                blockExplorerUrls:explorers.length ? explorers.map(item=>{
+                    return item.url
+                }) : [],
+                nativeCurrency:nativeCurrency
+              }
+            ];
+            console.log(data)
+            await this.provider.request({
+              method: "wallet_addEthereumChain",
+              params: data
+            });
         }
     }
 
@@ -80,7 +81,7 @@ class Connect {
             this.chainId = parseInt(this.provider.chainId)
             this.chainDetail = await this.getChainDetail(this.chainId)
             // 切换至目标链
-            if(this.chainId != parseInt(this.provider.chainId) && "walletconnect" != this.walletSource.toLocaleLowerCase()) {
+            if(this.chainId != parseInt(this.provider.chainId)) {
                 await this.switchChain()
             }
             return accounts
