@@ -15,6 +15,10 @@ class Connect {
         this.walletDetail = null
         this.provider = null
         this.walletSource = walletSource
+
+        if("walletconnect" != walletSource.toLocaleLowerCase()){
+            localStorage.setItem("walletconnect","")
+        }
     }
 
     async init() {
