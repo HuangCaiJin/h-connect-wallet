@@ -9,7 +9,7 @@ let {
 } = require('./error')
 class Connect {
 
-     constructor(chainId = 1,walletSource = "Metamask") {
+     constructor(walletSource = "Metamask",chainId) {
         this.chainId = chainId
         this.chainDetail = null
         this.walletDetail = null
@@ -30,11 +30,13 @@ class Connect {
                 this.walletDetail = walletDetail
             }
 
-            this.chainDetail = await this.getChainDetail(this.chainId)
-            
-
             // 获取提供者
             this.provider = await this.getProvider()
+            if(!this.chainId) {
+                this.chainId = provider.chainId
+            }
+
+            this.chainDetail = await this.getChainDetail(this.chainId)
 
             // 切换至目标链
             if(this.chainId != parseInt(this.provider.chainId) && "walletconnect" != this.walletSource.toLocaleLowerCase()) {
