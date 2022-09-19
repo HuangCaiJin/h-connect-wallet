@@ -70,7 +70,9 @@ class Connect {
                     chainId: `0x${this.chainId.toString(16)}`,
                     chainName: name,
                     rpcUrls: rpc,
-                    blockExplorerUrls:explorers,
+                    blockExplorerUrls:explorers.length ? explorers.map(item=>{
+                        return item.url
+                    }) : [],
                     nativeCurrency:nativeCurrency
                   }
                 ];
