@@ -73,6 +73,9 @@ class Connect {
               params: data
             });
         }
+
+        // 更新提供者
+        this.provider = await this.getProvider()
     }
 
     async enable() {
