@@ -57,7 +57,7 @@ class Connect {
 
     async switchChain() {
         try{
-            let data = [{ chainId: `0x${this.chainId.toString(16)}` }];
+            let data = [{ chainId: `0x${parseInt(this.chainId).toString(16)}` }];
             await this.provider.request({
               method: "wallet_switchEthereumChain",
               params: data
@@ -67,7 +67,7 @@ class Connect {
                 let { name,rpc,explorers,nativeCurrency } = this.chainDetail
                 let data = [
                   {
-                    chainId: `0x${this.chainId.toString(16)}`,
+                    chainId: `0x${parseInt(this.chainId).toString(16)}`,
                     chainName: name,
                     rpcUrls: rpc,
                     blockExplorerUrls:explorers.length ? explorers.map(item=>{
