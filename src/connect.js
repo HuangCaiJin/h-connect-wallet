@@ -43,7 +43,7 @@ class Connect {
             this.chainDetail = await this.getChainDetail(this.chainId)
 
             // 切换至目标链
-            if(this.chainId != parseInt(this.provider.chainId) && "walletconnect" != this.walletSource.toLocaleLowerCase()) {
+            if(this.chainId != parseInt(this.provider.chainId)) {
                 await this.switchChain()
             }
             

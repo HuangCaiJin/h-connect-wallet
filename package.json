@@ -1,6 +1,6 @@
 {
   "name": "h-connect-wallet",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "连接区块链钱包",
   "main": "src/index.js",
   "files": [
