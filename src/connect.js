@@ -78,7 +78,11 @@ class Connect {
     async enable() {
         try{
             let accounts = await this.provider.enable()
-            this.chainId = parseInt(this.provider.chainId)
+
+            if(!this.chainId) {
+                this.chainId = parseInt(this.provider.chainId)
+            }
+            
             this.chainDetail = await this.getChainDetail(this.chainId)
             // 切换至目标链
             if(this.chainId != parseInt(this.provider.chainId)) {
