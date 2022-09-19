@@ -36,11 +36,9 @@ class Connect {
 
             // 获取提供者
             this.provider = await this.getProvider()
-            
+
             if(this.chainId) {
-                console.log(this.chainId)
                 this.chainDetail = await this.getChainDetail(this.chainId)
-                
             }
 
             return true
@@ -79,10 +77,6 @@ class Connect {
               params: data
             });
         }
-
-        // 更新提供者
-        this.provider.chainId = parseInt(chainId)
-        this.provider.rpcUrl = this.provider.rpc[this.provider.chainId]
     }
 
     async enable() {
@@ -197,9 +191,9 @@ class Connect {
         };
     }
 
-    async getChainDetail() {
+    async getChainDetail(chainId) {
         try{
-            let chain = await api.chainDetail(this.chainId)
+            let chain = await api.chainDetail(chainId)
             return chain ? {
                 ...chain,
                 rpcUrl:chain.rpc.length ? chain.rpc[0] : "",
@@ -220,6 +214,7 @@ class Connect {
         let rpc = await api.rpclist()
         let provider = new WalletConnectProvider({
             rpc,
+            chainId:this.chainId,
             qrcodeModalOptions: {
                 desktopLinks: [
                 'ledger',

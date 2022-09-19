@@ -1,8 +1,10 @@
 let Connect = require("./connect")
-
-/* let connect = new Connect("Metamask",97)
+/* 
+let connect = new Connect("WalletConnect",97)
 document.getElementById("enable").addEventListener("click",async () => {
-    
+    document.getElementById("switch").addEventListener("click",async () => {
+        connect.switchChain(56)
+    })
     let init = await connect.init()
     if(init){
         let account = await connect.enable()
@@ -12,7 +14,7 @@ document.getElementById("enable").addEventListener("click",async () => {
             document.getElementById("chainId").innerHTML = connect.provider.chainId
             document.getElementById("connected").innerHTML = true
             connect.provider.on("networkChanged", () => {
-                console.log("networkChanged",connect.provider.chainId)
+                console.log("networkChanged",connect)
                 let chainId = parseInt(connect.provider.chainId)
                 console.log("networkChanged",chainId)
                 document.getElementById("chainId").innerHTML = chainId
@@ -31,10 +33,7 @@ document.getElementById("enable").addEventListener("click",async () => {
     }
     
 })
-document.getElementById("switch").addEventListener("click",async () => {
-    
-    connect.switchChain(56)
-}) */
+ */
 
 if(window) {
     window.Connect = Connect
