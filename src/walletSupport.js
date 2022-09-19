@@ -19,7 +19,7 @@ module.exports = [
     },
     {
         "name": "WalletConnect",
-        "icon": "https://walletconnect.com/_next/static/media/logo_mark.84dd8525.svg",
+        "icon": "https://oss.nftup.vip/market/2022/09/19/7a6ddd2a4fc94355b1b45df7291ee1fd.png",
         "supportPc": true,
         "pluginObj": "",
         "supportNetwork":[
