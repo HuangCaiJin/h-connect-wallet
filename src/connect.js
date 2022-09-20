@@ -77,6 +77,8 @@ class Connect {
               params: data
             });
         }
+        // 重新初始化
+        await this.init()
     }
 
     async enable() {

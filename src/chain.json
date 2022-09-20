@@ -44,7 +44,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 48760815060.157715,
+        "tvl": 47147716379.37969,
         "chainSlug": "ethereum"
     },
     {
@@ -224,7 +224,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 216240.51558056395,
+        "tvl": 215035.42801070705,
         "chainSlug": "ubiq"
     },
     {
@@ -267,7 +267,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 933143100.624094,
+        "tvl": 919314835.0716856,
         "chainSlug": "optimism"
     },
     {
@@ -465,7 +465,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 22825416.804051746,
+        "tvl": 20572369.818542924,
         "chainSlug": "songbird"
     },
     {
@@ -495,7 +495,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 3168945.070741847,
+        "tvl": 3080278.93344192,
         "chainSlug": "elastos"
     },
     {
@@ -597,7 +597,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 775713276.5171037,
+        "tvl": 755240676.1984317,
         "chainSlug": "cronos"
     },
     {
@@ -732,7 +732,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 63669550.78588642,
+        "tvl": 60912417.86581622,
         "chainSlug": "rsk"
     },
     {
@@ -927,7 +927,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 39183174.91424236,
+        "tvl": 38544785.79948664,
         "chainSlug": "telos"
     },
     {
@@ -1114,7 +1114,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 434887.14958062005,
+        "tvl": 425743.8434772674,
         "chainSlug": "xdc"
     },
     {
@@ -1179,7 +1179,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 4130352.88127392,
+        "tvl": 3963580.7646503365,
         "chainSlug": "csc"
     },
     {
@@ -1259,14 +1259,13 @@
                 "standard": "none"
             }
         ],
-        "tvl": 99519.76447517684,
+        "tvl": 90344.33015618676,
         "chainSlug": "zyx"
     },
     {
         "name": "Binance Smart Chain Mainnet",
         "chain": "BSC",
         "rpc": [
-            "https://bsc.getblock.io/mainnet/?api_key=8701d4cf-720e-40ec-ad9b-897743f29c75",
             "https://bsc-dataseed1.binance.org",
             "https://bsc-dataseed2.binance.org",
             "https://bsc-dataseed3.binance.org",
@@ -1310,7 +1309,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 6407929452.546581,
+        "tvl": 6257123507.188533,
         "chainSlug": "binance"
     },
     {
@@ -1340,7 +1339,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 1065465.3458701766,
+        "tvl": 1037965.4741832274,
         "chainSlug": "syscoin"
     },
     {
@@ -1424,7 +1423,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 22866.552867194623,
+        "tvl": 21951.92583611946,
         "chainSlug": "gochain"
     },
     {
@@ -1458,7 +1457,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 801460.2965155999,
+        "tvl": 671638.9848518763,
         "chainSlug": "ethereumclassic"
     },
     {
@@ -1563,7 +1562,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 11831765.823776951,
+        "tvl": 25899996.731730983,
         "chainSlug": "okexchain"
     },
     {
@@ -1654,7 +1653,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 385393.34380183433,
+        "tvl": 355567.8987955428,
         "chainSlug": "hoo"
     },
     {
@@ -1899,7 +1898,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 489576.5308464404,
+        "tvl": 455271.63463800075,
         "chainSlug": "meter"
     },
     {
@@ -2015,7 +2014,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 185973.82209833423,
+        "tvl": 156905.77420928626,
         "chainSlug": "nova network"
     },
     {
@@ -2035,7 +2034,7 @@
         "chainId": 88,
         "networkId": 88,
         "slip44": 889,
-        "tvl": 813417.6054335994,
+        "tvl": 790981.1801029809,
         "chainSlug": "tomochain"
     },
     {
@@ -2226,8 +2225,6 @@
         "name": "Binance Smart Chain Testnet",
         "chain": "BSC",
         "rpc": [
-            "https://bsc.getblock.io/testnet/?api_key=8701d4cf-720e-40ec-ad9b-897743f29c75",
-            "https://data-seed-prebsc-1-s1.binance.org:8545/",
             "https://data-seed-prebsc-1-s1.binance.org:8545",
             "https://data-seed-prebsc-2-s1.binance.org:8545",
             "https://data-seed-prebsc-1-s2.binance.org:8545",
@@ -2328,7 +2325,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 215943506.04523262,
+        "tvl": 211273989.7888595,
         "chainSlug": "xdai"
     },
     {
@@ -2445,7 +2442,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 6549117.34940544,
+        "tvl": 6345513.979507169,
         "chainSlug": "velas"
     },
     {
@@ -2503,7 +2500,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 6462462.91962114,
+        "tvl": 6268561.7569745025,
         "chainSlug": "thundercore"
     },
     {
@@ -2560,7 +2557,7 @@
         "shortName": "fuse",
         "chainId": 122,
         "networkId": 122,
-        "tvl": 3651302.0857850467,
+        "tvl": 3572163.617231101,
         "chainSlug": "fuse"
     },
     {
@@ -2699,7 +2696,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 128139399.89439803,
+        "tvl": 125362974.12070979,
         "chainSlug": "heco"
     },
     {
@@ -2736,7 +2733,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 1542816977.6538973,
+        "tvl": 1484677529.8769135,
         "chainSlug": "polygon"
     },
     {
@@ -3217,7 +3214,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 846170.0197365704,
+        "tvl": 849269.5415365073,
         "chainSlug": "energyweb"
     },
     {
@@ -3254,7 +3251,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 672675285.9278206,
+        "tvl": 635894002.2562605,
         "chainSlug": "fantom"
     },
     {
@@ -3346,7 +3343,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 84027.6624569213,
+        "tvl": 82661.91922751683,
         "chainSlug": "hpb"
     },
     {
@@ -3411,7 +3408,7 @@
                 }
             ]
         },
-        "tvl": 4881714.471553726,
+        "tvl": 4387239.042248886,
         "chainSlug": "boba"
     },
     {
@@ -3466,7 +3463,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 51978639.971521676,
+        "tvl": 51223276.14586212,
         "chainSlug": "kucoin"
     },
     {
@@ -3573,7 +3570,7 @@
                 "icon": "subscan"
             }
         ],
-        "tvl": 373182.3192923182,
+        "tvl": 368638.5249598594,
         "chainSlug": "shiden"
     },
     {
@@ -3627,7 +3624,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 25923057.56281027,
+        "tvl": 23828781.023766834,
         "chainSlug": "theta"
     },
     {
@@ -4061,7 +4058,7 @@
                 "icon": "subscan"
             }
         ],
-        "tvl": 50192524.48371365,
+        "tvl": 47829560.32873845,
         "chainSlug": "astar"
     },
     {
@@ -4439,7 +4436,7 @@
         "chainId": 820,
         "networkId": 1,
         "slip44": 820,
-        "tvl": 1810581.2075217126,
+        "tvl": 1776563.4379292363,
         "chainSlug": "callisto"
     },
     {
@@ -4500,7 +4497,7 @@
         "chainId": 888,
         "networkId": 888,
         "slip44": 5718350,
-        "tvl": 28379970.421130113,
+        "tvl": 27706728.565614298,
         "chainSlug": "wanchain"
     },
     {
@@ -5118,7 +5115,7 @@
                 }
             ]
         },
-        "tvl": 53294227.433375016,
+        "tvl": 52007231.596439905,
         "chainSlug": "metis"
     },
     {
@@ -5354,7 +5351,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 8012548.290007424,
+        "tvl": 8118324.914246367,
         "chainSlug": "ultron"
     },
     {
@@ -5431,7 +5428,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 75718225.08162421,
+        "tvl": 71480177.24874446,
         "chainSlug": "moonbeam"
     },
     {
@@ -5461,7 +5458,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 79001476.39443839,
+        "tvl": 77643498.65689239,
         "chainSlug": "moonriver"
     },
     {
@@ -6001,7 +5998,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 12187290.673003748,
+        "tvl": 10523079.216590539,
         "chainSlug": "dogechain"
     },
     {
@@ -6090,7 +6087,7 @@
         "shortName": "420",
         "chainId": 2020,
         "networkId": 2020,
-        "tvl": 60271557.82579429,
+        "tvl": 57459666.307831846,
         "chainSlug": "ronin"
     },
     {
@@ -6416,7 +6413,7 @@
                 "icon": "kava"
             }
         ],
-        "tvl": 270180495.23152965,
+        "tvl": 276483695.6115422,
         "chainSlug": "kava"
     },
     {
@@ -7076,7 +7073,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 35285749.77312679,
+        "tvl": 34366595.15661168,
         "chainSlug": "iotex"
     },
     {
@@ -7265,7 +7262,7 @@
                 }
             ]
         },
-        "tvl": 1497559.0762733547,
+        "tvl": 1476468.8065957478,
         "chainSlug": "nahmii"
     },
     {
@@ -7754,7 +7751,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 358728365.2634127,
+        "tvl": 352254012.70221394,
         "chainSlug": "klaytn"
     },
     {
@@ -8000,7 +7997,7 @@
                 "icon": "evmos"
             }
         ],
-        "tvl": 1813830.0103482055,
+        "tvl": 1683755.081851175,
         "chainSlug": "evmos"
     },
     {
@@ -8141,7 +8138,7 @@
         "shortName": "smartbch",
         "chainId": 10000,
         "networkId": 10000,
-        "tvl": 5875547.950767991,
+        "tvl": 5440174.188842286,
         "chainSlug": "smartbch"
     },
     {
@@ -8984,7 +8981,7 @@
         "shortName": "fsn",
         "chainId": 32659,
         "networkId": 32659,
-        "tvl": 138015410.26515067,
+        "tvl": 136864783.00485146,
         "chainSlug": "fusion"
     },
     {
@@ -9139,7 +9136,7 @@
                 }
             ]
         },
-        "tvl": 996417850.0311788,
+        "tvl": 979524976.7073479,
         "chainSlug": "arbitrum"
     },
     {
@@ -9203,7 +9200,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 130872522.96362078,
+        "tvl": 125896439.25597605,
         "chainSlug": "celo"
     },
     {
@@ -9259,7 +9256,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 25403958.037185308,
+        "tvl": 24673565.871193595,
         "chainSlug": "oasis"
     },
     {
@@ -9341,7 +9338,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 1990092449.2878757,
+        "tvl": 1962230135.7360322,
         "chainSlug": "avalanche"
     },
     {
@@ -9415,7 +9412,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 328006.2387254301,
+        "tvl": 320960.10145918845,
         "chainSlug": "rei"
     },
     {
@@ -9517,7 +9514,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 16995.982543207534,
+        "tvl": 16947.51878831673,
         "chainSlug": "reichain"
     },
     {
@@ -9954,7 +9951,7 @@
                 "standard": "none"
             }
         ],
-        "tvl": 7428175.620231043,
+        "tvl": 7316472.4782051435,
         "chainSlug": "godwoken"
     },
     {
@@ -10007,7 +10004,7 @@
         "name": "ResinCoin Mainnet",
         "chain": "RESIN",
         "rpc": [
-            "https://mainnet.resincoin.ml"
+            "https://mainnet.resincoin.dev"
         ],
         "faucets": [],
         "nativeCurrency": {
@@ -10015,14 +10012,14 @@
             "symbol": "RESIN",
             "decimals": 18
         },
-        "infoURL": "https://resincoin.ml",
+        "infoURL": "https://resincoin.dev",
         "shortName": "resin",
         "chainId": 75000,
         "networkId": 75000,
         "explorers": [
             {
                 "name": "ResinScan",
-                "url": "https://explorer.resincoin.ml",
+                "url": "https://explorer.resincoin.dev",
                 "standard": "none"
             }
         ]
@@ -10100,6 +10097,34 @@
                 "name": "ivarscan",
                 "url": "https://ivarscan.com",
                 "standard": "EIP3091"
+            }
+        ]
+    },
+    {
+        "name": "Beverly Hills",
+        "title": "Ethereum multi-client Verkle Testnet Beverly Hills",
+        "chain": "ETH",
+        "rpc": [
+            "https://rpc.beverlyhills.ethdevops.io:8545"
+        ],
+        "faucets": [
+            "https://faucet.beverlyhills.ethdevops.io"
+        ],
+        "nativeCurrency": {
+            "name": "Beverly Hills Testnet Ether",
+            "symbol": "BVE",
+            "decimals": 18
+        },
+        "infoURL": "https://beverlyhills.ethdevops.io",
+        "shortName": "bvhl",
+        "chainId": 90210,
+        "networkId": 90210,
+        "status": "incubating",
+        "explorers": [
+            {
+                "name": "Beverly Hills explorer",
+                "url": "https://explorer.beverlyhills.ethdevops.io",
+                "standard": "none"
             }
         ]
     },
@@ -11086,7 +11111,7 @@
         "shortName": "olympus",
         "chainId": 333999,
         "networkId": 333999,
-        "tvl": 89492.22556671381,
+        "tvl": 31525.650075204903,
         "chainSlug": "polis"
     },
     {
@@ -11372,7 +11397,7 @@
         "chainId": 888888,
         "networkId": 888888,
         "slip44": 60,
-        "tvl": 8067714.532126373,
+        "tvl": 8081800.967470532,
         "chainSlug": "vision"
     },
     {
@@ -12269,7 +12294,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 165575445.89985237,
+        "tvl": 159246508.58272728,
         "chainSlug": "aurora"
     },
     {
@@ -12344,7 +12369,7 @@
                 "standard": "EIP3091"
             }
         ],
-        "tvl": 37115926.893064395,
+        "tvl": 33296792.443065997,
         "chainSlug": "harmony"
     },
     {
@@ -12618,7 +12643,7 @@
                 "icon": "palm"
             }
         ],
-        "tvl": 836.2348128562045,
+        "tvl": 826.2499971172325,
         "chainSlug": "palm"
     },
     {

@@ -8,7 +8,7 @@ let getChains = () => {
 
 let getChainDetail = (chainId) => {
     try{
-        return api.get(`https://chainlist.org/_next/data/8NdOx0oZIxzrYOEN-3JS_/zh/chain/${chainId}.json`)
+        return api.get(`https://chainlist.org/_next/data/CrSJ7IWqsfh1-Uoywb_uc/zh/chain/${chainId}.json`)
     }catch(err){
         console.error(err)
         return false
