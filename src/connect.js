@@ -11,18 +11,22 @@ class Connect {
 
      constructor(walletSource = "Metamask",chainId) {
         this.chainId = chainId
+        this.rpc = null
         this.chainDetail = null
         this.walletDetail = null
         this.provider = null
         this.walletSource = walletSource
-
+        
         if("walletconnect" != walletSource.toLocaleLowerCase()){
             localStorage.setItem("walletconnect","")
         }
     }
 
-    async init() {
+    async init(rpc) {
         try{
+            // 设置自定义rpc
+            this.rpc = rpc
+
             // 判断是否支持当前需要连接的钱包
             let walletDetail = this.supportWallets().find(item => {
                 return item.name.toLocaleUpperCase() == this.walletSource.toLocaleUpperCase()
@@ -78,7 +82,7 @@ class Connect {
             });
         }
         // 重新初始化
-        await this.init()
+        await this.init(this.rpc ? this.rpc : null)
     }
 
     async enable() {
@@ -215,7 +219,7 @@ class Connect {
     async wcProvider() {
         let rpc = await api.rpclist()
         let provider = new WalletConnectProvider({
-            rpc,
+            rpc:this.rpc ? this.rpc : rpc,
             chainId:this.chainId,
             qrcodeModalOptions: {
                 desktopLinks: [

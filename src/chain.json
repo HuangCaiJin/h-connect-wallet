@@ -103,6 +103,7 @@
         "title": "Ethereum Testnet Rinkeby",
         "chain": "ETH",
         "rpc": [
+            "https://eth.getblock.io/rinkeby/?api_key=b3bb918f-bb3a-4a8f-9717-f2cc1c20b929",
             "https://rpc.ankr.com/eth_rinkeby",
             "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
         ],
@@ -2225,6 +2226,7 @@
         "name": "Binance Smart Chain Testnet",
         "chain": "BSC",
         "rpc": [
+            "https://bsc.getblock.io/testnet/?api_key=b3bb918f-bb3a-4a8f-9717-f2cc1c20b929",
             "https://data-seed-prebsc-1-s1.binance.org:8545",
             "https://data-seed-prebsc-2-s1.binance.org:8545",
             "https://data-seed-prebsc-1-s2.binance.org:8545",
