@@ -1,13 +1,13 @@
 {
   "name": "h-connect-wallet",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "连接区块链钱包",
   "main": "src/index.js",
   "files": [
     "src"
   ],
   "scripts": {
-    "build": "node ./build/index && webpack",
+    "build": "webpack",
     "dev": "webpack server --open"
   },
   "author": "CaiJin Huang",

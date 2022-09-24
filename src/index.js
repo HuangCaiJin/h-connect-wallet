@@ -35,7 +35,7 @@ document.getElementById("enable").addEventListener("click",async () => {
 })
  */
 
-if(window) {
+if (window) {
     window.Connect = Connect
 }
 

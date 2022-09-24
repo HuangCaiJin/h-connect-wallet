@@ -83,6 +83,9 @@ class Connect {
         }
         // 重新初始化
         await this.init(this.rpc ? this.rpc : null)
+        if(window && "location" in window) {
+            window.location.reload()
+        }
     }
 
     async enable() {
@@ -215,10 +218,19 @@ class Connect {
         return walletSupport
     }
 
-    async wcProvider() {
-        let rpc = await api.rpclist()
+    async wcProvider(mainRpc) {
+        let rpc;
+        if(mainRpc) {
+            rpc = mainRpc
+        }else {
+            if(this.rpc) {
+                rpc = this.rpc
+            }else{
+                rpc = await api.rpclist()
+            }
+        }
         let provider = new WalletConnectProvider({
-            rpc:this.rpc ? this.rpc : rpc,
+            rpc,
             chainId:this.chainId,
             qrcodeModalOptions: {
                 desktopLinks: [
