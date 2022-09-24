@@ -130,13 +130,12 @@ class Connect {
             ifr.src = this.replaceDomain(android.schemes);
             ifr.style.display = "none"; //隐藏
             setTimeout(() => {
-              try {
-                document.body.appendChild(ifr);
-              } catch (err) {
+                try { document.body.appendChild(ifr); } catch (err) { }
+
                 setTimeout(() => {
                     this.supportUniappJump(android.download)
                 }, 5000);
-              }
+                
             }, 1000);
           } else {
             this.supportUniappJump(android.download)
