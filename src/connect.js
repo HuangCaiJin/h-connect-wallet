@@ -92,7 +92,7 @@ class Connect {
         try{
             let accounts = await this.provider.enable()
             // 切换至目标链
-            if(this.chainId != parseInt(this.provider.chainId)) {
+            if(this.chainId && this.chainId != parseInt(this.provider.chainId)) {
                 await this.switchChain()
             }
             return accounts
