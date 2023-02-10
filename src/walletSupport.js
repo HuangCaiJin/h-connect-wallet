@@ -1,7 +1,7 @@
 module.exports = [
     {
         "name": "Metamask",
-        "icon": "https://cryptopark.oss-ap-southeast-1.aliyuncs.com/market/2022/01/10/c0878d6879924972962ae01af6d932f9.svg",
+        "icon": "/source/svg/metamask.svg",
         "supportPc": true,
         "pluginObj": "ethereum",
         "supportNetwork":[
