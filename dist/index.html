@@ -11,7 +11,7 @@
     <div id="root">
         <div class="btn" id="enable">Enable</div>
         <div class="btn" id="switch">Switch</div>
-        <div class="btn" id="switch">Send Transaction</div>
+        <!-- <div class="btn" id="switch">Send Transaction</div> -->
         <div id="address"></div>
         <div id="chainId"></div>
         <div id="connected"></div>
@@ -19,13 +19,27 @@
     <script src="./bundle.js"></script>
     <script src="./web3.min.js"></script>
     <script>
-        let connect = new Connect("WalletConnect","cc2a0f4bdcdbab4a34171a4d1486fa73",56)
+        setTimeout(async () => {
+            let { provider } = await runWallet_v2({
+                projectId:"eada44f592fe98c4211fca1d9c767c3d",
+                chainId:97,
+                chainMapping: {
+                    97:"https://bsc-testnet.publicnode.com",
+                    56:"https://bsc-dataseed2.bnbchain.org"
+                }
+            })
+            // 断开连接
+            // provider.disconnect()
+        },2000)
+        /* let connect = new Connect("WalletConnect","cc2a0f4bdcdbab4a34171a4d1486fa73",56)
         document.getElementById("enable").addEventListener("click",async () => {
             document.getElementById("switch").addEventListener("click",async () => {
-                connect.switchChain(56)
+                console.log("switch")
+                connect.switchChain(1)
             })
             let init = await connect.init({
-				56: "https://koge-rpc-bsc.48.club"
+				56: "https://koge-rpc-bsc.48.club",
+                1: "https://eth.llamarpc.com"
 			})
             if(init){
                 let account = await connect.enable()
@@ -53,14 +67,14 @@
                 }
             }
             
-        })
+        }) */
     
     
-        async function send() {
+        /* async function send() {
             let init = await connect.init()
             let account = await connect.enable()
             // connect.provider
-        }
+        } */
     </script>
 </body>
 </html>

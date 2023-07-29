@@ -24,16 +24,13 @@ class Provider {
 
 	async init(rpcMap,chainId = "") {
         let chains = Object.keys(rpcMap)
-        if(chainId) {
-            chains = chains.filter(item => {
-                return item != chainId
-            })
-            chains.unshift(chainId)
-        }
+		if(!chainId) {
+			chainId = chains[0]
+		}
         
         let params = {
 			projectId: this.projectId,
-			chains,
+			chains:[parseInt(chainId)],
 			showQrModal: true,
 			rpcMap,
 			methods: [

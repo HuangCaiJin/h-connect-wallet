@@ -244,5 +244,25 @@ class Connect {
     }
 }
 
+let runWallet_v2 = async ({
+    projectId = "",
+    chainId = 1,
+    chainMapping = {},
+    type = "WalletConnect"
+}) => {
+    let connect = new Connect(type,projectId,chainId)
+    let init = await connect.init(chainMapping)
+    if (init) {
+        let account = await connect.enable()
+        return {
+            accounts:account,
+            provider:connect.provider
+        }
+    }
+    return false
+}
 
-module.exports = Connect
+module.exports = {
+    Connect,
+    runWallet_v2
+}
