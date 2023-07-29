@@ -19,12 +19,14 @@
     <script src="./bundle.js"></script>
     <script src="./web3.min.js"></script>
     <script>
-        let connect = new Connect("WalletConnect",97)
+        let connect = new Connect("WalletConnect","cc2a0f4bdcdbab4a34171a4d1486fa73",56)
         document.getElementById("enable").addEventListener("click",async () => {
             document.getElementById("switch").addEventListener("click",async () => {
                 connect.switchChain(56)
             })
-            let init = await connect.init()
+            let init = await connect.init({
+				56: "https://koge-rpc-bsc.48.club"
+			})
             if(init){
                 let account = await connect.enable()
                 if(account) {

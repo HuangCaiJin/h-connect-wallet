@@ -7,16 +7,20 @@ let {
     INIT_FAIL,
     REJECT_CONNECT
 } = require('./error')
+let { Provider } = require("./v2")
+
 class Connect {
 
-     constructor(walletSource = "Metamask",chainId) {
+    constructor(walletSource = "Metamask",projectId = "",chainId) {
+
+        this.projectId = projectId
         this.chainId = chainId
         this.rpc = null
         this.chainDetail = null
         this.walletDetail = null
         this.provider = null
         this.walletSource = walletSource
-        
+
         if("walletconnect" != walletSource.toLocaleLowerCase()){
             localStorage.setItem("walletconnect","")
         }
@@ -110,7 +114,7 @@ class Connect {
     }
 
     replaceDomain(url) {
-        return url.replace("${domain}",document.domain)
+        return url.replace("${domain}",location.host)
     }
 
     appJump() {
@@ -220,6 +224,7 @@ class Connect {
 
     async wcProvider(mainRpc) {
         let rpc;
+
         if(mainRpc) {
             rpc = mainRpc
         }else {
@@ -229,40 +234,12 @@ class Connect {
                 rpc = await api.rpclist()
             }
         }
-        let provider = new WalletConnectProvider({
-            rpc,
-            chainId:this.chainId,
-            qrcodeModalOptions: {
-                desktopLinks: [
-                'ledger',
-                'tokenary',
-                'wallet',
-                'wallet 3',
-                'secuX',
-                'ambire',
-                'wallet3',
-                'apolloX',
-                'zerion',
-                'sequence',
-                'punkWallet',
-                'kryptoGO',
-                'nft',
-                'riceWallet',
-                'vision',
-                'keyring'
-                ],
-                mobileLinks: [
-                "rainbow",
-                "metamask",
-                "argent",
-                "trust",
-                "imtoken",
-                "pillar",
-                ],
-            }
-        });
-  
-        // let accounts = await window.ethereum.enable()
+
+        let v2Provider = new Provider({
+            projectId:this.projectId
+        })
+        let provider = await v2Provider.init(rpc,this.chainId)
+
         return provider
     }
 }
