@@ -262,7 +262,22 @@ let runWallet_v2 = async ({
     return false
 }
 
+let provider_v2 = async ({
+    projectId = "",
+    chainId = 1,
+    chainMapping = {},
+    type = "WalletConnect"
+}) => {
+    let connect = new Connect(type,projectId,chainId)
+    let init = await connect.init(chainMapping)
+    if (init) {
+        return connect.provider
+    }
+    return false
+}
+
 module.exports = {
     Connect,
-    runWallet_v2
+    runWallet_v2,
+    provider_v2
 }

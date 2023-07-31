@@ -1,4 +1,4 @@
-let { Connect,runWallet_v2 } = require("./connect")
+let { Connect,runWallet_v2,provider_v2 } = require("./connect")
 
 
 
@@ -18,6 +18,11 @@ let { Connect,runWallet_v2 } = require("./connect")
 if (window) {
     window.Connect = Connect
     window.runWallet_v2 = runWallet_v2
+    window.provider_v2 = provider_v2
 }
 
-module.exports = Connect
+module.exports = {
+    Connect,
+    runWallet_v2,
+    provider_v2
+}
