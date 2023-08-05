@@ -1,6 +1,7 @@
-let Request = require("./request")
-let api = new Request()
-let chains = require("./chain.json")
+// let Request = require("./request")
+// let api = new Request()
+// let chains = require("./chain")
+import chains from "./chain"
 
 let apiJson = {
     // chainlist.org
@@ -27,5 +28,4 @@ let apiJson = {
     // nftup.vue
 
 }
-
-module.exports = apiJson
+export default apiJson

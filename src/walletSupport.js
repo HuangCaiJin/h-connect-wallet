@@ -1,4 +1,4 @@
-module.exports = [
+export default [
     {
         "name": "Metamask",
         "icon": "/source/svg/metamask.svg",

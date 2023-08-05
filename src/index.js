@@ -1,4 +1,4 @@
-let { Connect,runWallet_v2,provider_v2 } = require("./connect")
+import connect from "./connect"
 
 
 
@@ -16,13 +16,17 @@ let { Connect,runWallet_v2,provider_v2 } = require("./connect")
     // provider.disconnect()
 },2000) */
 if (window) {
-    window.Connect = Connect
-    window.runWallet_v2 = runWallet_v2
-    window.provider_v2 = provider_v2
+    window.Connect = connect.Connect
+    window.runWallet_v2 = connect.runWallet_v2
+    window.provider_v2 = connect.provider_v2
 }
-
-module.exports = {
-    Connect,
-    runWallet_v2,
-    provider_v2
+export default {
+    Connect:connect.Connect,
+    runWallet_v2:connect.runWallet_v2,
+    provider_v2:connect.provider_v2
 }
+// module.exports = {
+//     Connect,
+//     runWallet_v2,
+//     provider_v2
+// }

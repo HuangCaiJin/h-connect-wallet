@@ -1,13 +1,22 @@
-let WalletConnectProvider = require("@walletconnect/web3-provider").default
-let walletSupport = require("./walletSupport")
-let api = require("./api")
-let {
-    WALLET_SUPPORT,
-    CHAIN_SUPPORT,
-    INIT_FAIL,
-    REJECT_CONNECT
-} = require('./error')
-let { Provider } = require("./v2")
+// let WalletConnectProvider = require("@walletconnect/web3-provider").default
+// let walletSupport = require("./walletSupport")
+// let api = require("./api")
+// let {
+//     WALLET_SUPPORT,
+//     CHAIN_SUPPORT,
+//     INIT_FAIL,
+//     REJECT_CONNECT
+// } = require('./error')
+import api from "./api"
+import walletSupport from "./walletSupport"
+import ERROR from "./error"
+let WALLET_SUPPORT = ERROR.WALLET_SUPPORT
+let CHAIN_SUPPORT = ERROR.CHAIN_SUPPORT
+let INIT_FAIL = ERROR.INIT_FAIL
+let REJECT_CONNECT = ERROR.REJECT_CONNECT
+// let { Provider } = require("./v2")
+// let { Provider } = require("./v2_pro")
+import Provider from "./v2_pro"
 
 class Connect {
 
@@ -87,20 +96,21 @@ class Connect {
         }
         // 重新初始化
         await this.init(this.rpc ? this.rpc : null)
-        if(window && "location" in window) {
-            window.location.reload()
-        }
+        // if(window && "location" in window) {
+        //     window.location.reload()
+        // }
     }
 
     async enable() {
         try{
             let accounts = await this.provider.enable()
             // 切换至目标链
-            if(this.chainId && this.chainId != parseInt(this.provider.chainId)) {
-                await this.switchChain()
-            }
+            // if(this.chainId && this.chainId != parseInt(this.provider.chainId)) {
+            //     await this.switchChain()
+            // }
             return accounts
         }catch(err){
+            console.log(err)
             console.error(REJECT_CONNECT)
         }
     }
@@ -238,7 +248,7 @@ class Connect {
         let v2Provider = new Provider({
             projectId:this.projectId
         })
-        let provider = await v2Provider.init(rpc,this.chainId)
+        let { provider } = await v2Provider.init(rpc,this.chainId)
 
         return provider
     }
@@ -254,6 +264,8 @@ let runWallet_v2 = async ({
     let init = await connect.init(chainMapping)
     if (init) {
         let account = await connect.enable()
+        console.log(account)
+        console.log(connect.provider)
         return {
             accounts:account,
             provider:connect.provider
@@ -276,7 +288,13 @@ let provider_v2 = async ({
     return false
 }
 
-module.exports = {
+/* module.exports = {
+    Connect,
+    runWallet_v2,
+    provider_v2
+}
+ */
+export default {
     Connect,
     runWallet_v2,
     provider_v2

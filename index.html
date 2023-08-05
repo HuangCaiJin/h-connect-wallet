@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="padding:10px 24px;font-size:16px;" onclick="run()">Test Connect</button>
+    <button style="padding:10px 24px;font-size:16px;" onclick="disconnect()">Disconnect</button>
+    <script type="module" defer="defer">
+        import connect from "./src/index.js"
+        let { Connect,runWallet_v2,provider_v2 } = connect
+        window.Connect = Connect
+        window.runWallet_v2 = runWallet_v2
+        window.provider_v2 = provider_v2
+        let run = async () => {
+            let result = await runWallet_v2({
+                projectId:"00ad9b7ebd076068666e73f7ad18e515"
+            })
+            console.log(result.provider)
+            // result.provider
+        }
+        window.run = run
+
+        let disconnect = async () => {
+            let provider = await provider_v2({
+                projectId:"00ad9b7ebd076068666e73f7ad18e515"
+            })
+            for (const [key, val] of Object.entries(localStorage)) {
+                if (key.indexOf('wc@2') != -1) {
+                    localStorage.removeItem(key)
+                }
+            }
+            localStorage.removeItem("wagmi.store")
+            await provider.disconnect()
+        }
+        window.disconnect = disconnect
+    </script>
+</body>
+</html>

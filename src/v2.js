@@ -27,12 +27,15 @@ class Provider {
 		if(!chainId) {
 			chainId = chains[0]
 		}
-        
+
         let params = {
 			projectId: this.projectId,
 			chains:[parseInt(chainId)],
 			showQrModal: true,
 			rpcMap,
+			optionalChains: chains.filter(item => {
+				return item != chainId
+			}).map(item => { return parseInt(item) }),
 			methods: [
                 "eth_sendTransaction", 
                 "personal_sign",
@@ -52,7 +55,13 @@ class Provider {
                 "wallet_requestPermissions",
                 "wallet_registerOnboarding",
                 "wallet_watchAsset",
-                "wallet_scanQRCode"
+                "wallet_scanQRCode",
+				"eth_gasPrice",
+				"eth_chainId",
+				"eth_estimateGas",
+				"eth_getCode",
+				"eth_syncing",
+				"eth_getTransactionReceipt"
             ],
 			events: [
                 "chainChanged", 
@@ -61,11 +70,38 @@ class Provider {
                 "disconnect",
                 "connect"
             ],
+			optionalMethods: [
+				"eth_sendTransaction", 
+                "personal_sign",
+                "eth_accounts",
+                "eth_requestAccounts",
+                "eth_call",
+                "eth_getBalance",
+                "eth_sendRawTransaction",
+                "eth_sign",
+                "eth_signTransaction",
+                "eth_signTypedData",
+                "eth_signTypedData_v3",
+                "eth_signTypedData_v4",
+                "wallet_switchEthereumChain",
+                "wallet_addEthereumChain",
+                "wallet_getPermissions",
+                "wallet_requestPermissions",
+                "wallet_registerOnboarding",
+                "wallet_watchAsset",
+                "wallet_scanQRCode",
+				"eth_gasPrice",
+				"eth_chainId",
+				"eth_estimateGas",
+				"eth_getCode",
+				"eth_syncing",
+				"eth_getTransactionReceipt"
+			],
 			qrModalOptions: {
 				themeMode: "light",
 				...wallets,
-				// enableAuthMode:true,
-				// enableExplorer:true
+				enableAuthMode:true,
+				enableExplorer:true
 			}
 		}
 
